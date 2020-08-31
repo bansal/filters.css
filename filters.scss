@@ -1,0 +1,113 @@
+/*!
+ * filters.css
+ * Source: https://github.com/bansal/filters.css
+ */
+
+// Config
+// ==================================================
+$filters-prefix : '' !default;
+$hover-prefix: 'hover-' !default;
+$transition-duration: ('slow': 500ms, 'medium': 300ms,
+'fast': 100ms) !default;
+
+// Filters
+// ==================================================
+
+/*
+Blur 0px to 10px
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}blur-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}blur-#{$i}:hover {
+    filter: blur(#{$i}px);
+  }
+}
+
+/*
+Grayscale 0 to 1
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}grayscale-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}grayscale-#{$i}:hover {
+    filter: grayscale($i*0.1);
+  }
+}
+
+/*
+Brightness 0% to 200%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}brightness-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}brightness-#{$i}:hover {
+    filter: brightness($i*20%);
+  }
+}
+
+/*
+Contrast 100% to 200%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}contrast-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}contrast-#{$i}:hover {
+    filter: contrast($i*10% + 100%);
+  }
+}
+
+/*
+Invert 0% to 100%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}invert-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}invert-#{$i}:hover {
+    filter: invert($i*10%);
+  }
+}
+
+/*
+Saturate 0% to 100%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}saturate-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}saturate-#{$i}:hover {
+    filter: saturate($i*10%);
+  }
+}
+
+/*
+Sepia 0% to 100%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}sepia-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}sepia-#{$i}:hover {
+    filter: sepia($i*10%);
+  }
+}
+
+/*
+Backdrop Blur 0px to 10px
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}backdrop-blur-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}backdrop-blur-#{$i}:hover {
+    backdrop-filter: blur(#{$i}px);
+  }
+}
+
+/*
+Opacity 0% to 100%
+*/
+@for $i from 0 through 10 {
+  .#{$filters-prefix}opacity-#{$i},
+  .#{$filters-prefix}#{$hover-prefix}opacity-#{$i}:hover {
+    opacity: $i*0.1;
+  }
+}
+
+/*
+Hover transition
+*/
+@each $name,$value in $transition-duration {
+  .transition-#{$name} {
+    transition: all $value ease;
+  }
+}

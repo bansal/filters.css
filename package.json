@@ -1,0 +1,31 @@
+{
+  "name": "filters.css",
+  "version": "1.0.0",
+  "description": "CSS helper library to apply color filters",
+  "main": "filters.scss",
+  "unpkg": "dist/filters.min.css",
+  "scripts": {
+    "build-autoprefix": "postcss -u autoprefixer --no-map.inline --autoprefixer.browsers \"cover 99.5%\" -r dist/*.css",
+    "build-dist": "node-sass --output-style expanded --source-map true filters.scss dist/filters.css && node-sass --source-map true --output-style compressed filters.scss dist/filters.min.css",
+    "build": "npm run build-dist && npm run build-autoprefix",
+    "css-lint": "stylelint **/*.scss"
+  },
+  "author": "bansal <hello@bansal.io>",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "scss",
+    "framework",
+    "ui",
+    "frontend",
+    "css filters"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
+    "stylelint": "^13.5.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.16.0"
+  }
+}
